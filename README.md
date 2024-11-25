@@ -19,3 +19,7 @@ This project was developed using **React**, **Vite**, and **Tailwind CSS**, and 
 - cd 2dayevangelize
 - npm install
 - npm run dev
+
+# Future Plans
+- Addition of an AI, which generates images, based on the text of the Gospel.
+- Addition of differents windows, with different content. For example, a canvas of the saint of the day 
