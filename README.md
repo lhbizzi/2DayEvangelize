@@ -2,6 +2,10 @@
 
 This project was developed using **React**, **Vite**, and **Tailwind CSS**, and integrates with the [Liturgia API](https://liturgia.up.railway.app/), providing liturgical data such as celebrations and readings.
 
+# Visit the site
+
+You can see the project working through the link: https://2-day-evangelize.vercel.app
+
 ## Technologies Used
 
 - **React**: For building the user interface.
