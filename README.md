@@ -14,7 +14,7 @@ This project was developed using **React**, **Vite**, and **Tailwind CSS**, and 
 1. Clone this repository to your local machine:
 
    ```bash
-   git clone https://github.com/your-username/repository-name.git
+   git clone https://github.com/your-username/2DayEvangelize.git
 
 cd 2dayevangelize
 npm install
