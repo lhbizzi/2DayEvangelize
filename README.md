@@ -26,4 +26,17 @@ You can see the project working through the link: https://2-day-evangelize.verce
 
 # Future Plans
 - Addition of an AI, which generates images, based on the text of the Gospel.
-- Addition of differents windows, with different content. For example, a canvas of the saint of the day 
+- Addition of differents windows, with different content. For example, a canvas of the saint of the day.
+- Make the project responsive for mobile use.
+
+# Development stages
+- First, API research was done to find out how to retrieve the data. The search was done with help of the Chat GPT.
+ ![image](https://github.com/user-attachments/assets/d4050ba1-b1bd-4cfc-b541-a0ef59988331)
+
+- After, the Gospel API was tested, using postman, with the GET parameter.
+![image](https://github.com/user-attachments/assets/ab5b3a9f-f77c-4768-a05b-309a155c3ddb)
+
+- Latest final result.
+![image](https://github.com/user-attachments/assets/a28ae597-0179-4c64-964d-6dcd1bac1366)
+![image](https://github.com/user-attachments/assets/5379a0fc-2016-4cf0-9ecd-dca841f459af)
+  
