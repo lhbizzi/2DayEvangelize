@@ -4,7 +4,7 @@ This project was developed using **React**, **Vite**, and **Tailwind CSS**, and 
 
 # Visit the site
 
-You can see the project working through the link: https://2-day-evangelize.vercel.app
+You can see the project working through the link: https://2dayevangelize.vercel.app
 
 ## Technologies Used
 
