@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { fetchLiturgiaDiaria, Liturgia } from "./utils/api";
+import Divider from "./components/divider";
+import FormatarData from "./components/formatData";
 
 const App: React.FC = () => {
   const [liturgia, setLiturgia] = useState<Liturgia | null>(null);
@@ -35,17 +37,18 @@ const App: React.FC = () => {
           }}
         >
           <div className="flex flex-col w-full max-w-4xl">
-            <div className="flex flex-col justify-center p-4">
+            <div className="flex flex-col justify-center p-4 w-full">
               <p className="text-center text-lg font-bold mb-4">
-                {liturgia.data}
+                {FormatarData({ dataString: liturgia.data })}
               </p>
               <p className="text-base mb-2">Liturgia: {liturgia.liturgia}</p>
               <p className="text-base mb-2">Cor Litúrgica: {liturgia.cor}</p>
               <p className="text-base">Oração do Dia: {liturgia.dia}</p>
             </div>
+            <Divider />
 
             {/* Primeira Leitura */}
-            <div className="flex flex-col justify-center pt-8">
+            <div className="flex flex-col justify-center py-8">
               <p className="text-center text-lg font-bold mb-4">
                 Primeira Leitura
               </p>
@@ -57,9 +60,10 @@ const App: React.FC = () => {
               </p>
               <p className="text-base">{liturgia.primeiraLeitura.texto}</p>
             </div>
+            <Divider />
 
             {/* Segunda Leitura */}
-            <div className="flex flex-col justify-center pt-8">
+            <div className="flex flex-col justify-center py-8">
               <p className="text-center text-lg font-bold mb-4">
                 Segunda Leitura
               </p>
@@ -77,17 +81,19 @@ const App: React.FC = () => {
                 </>
               )}
             </div>
+            <Divider />
 
             {/* Salmo */}
-            <div className="flex flex-col justify-center pt-8">
+            <div className="flex flex-col justify-center py-8">
               <p className="text-center text-lg font-bold mb-4">Salmo</p>
               <p className="text-base mb-2">{liturgia.salmo.referencia}</p>
               <p className="text-base mb-2">Refrão: {liturgia.salmo.refrao}</p>
               <p className="text-base">{liturgia.salmo.texto}</p>
             </div>
+            <Divider />
 
             {/* Evangelho */}
-            <div className="flex flex-col justify-center pt-8 pb-8">
+            <div className="flex flex-col justify-center py-8">
               <p className="text-center text-lg font-bold mb-4">Evangelho</p>
               <p className="text-base mb-2">{liturgia.evangelho.referencia}</p>
               <p className="text-base mb-2">{liturgia.evangelho.titulo}</p>
