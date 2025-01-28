@@ -8,12 +8,8 @@ const App: React.FC = () => {
   useEffect(() => {
     const loadLiturgia = async () => {
       try {
-        // Carrega os dados da API
         const data = await fetchLiturgiaDiaria();
         setLiturgia(data);
-
-        
-
         setLoading(false);
       } catch (error) {
         console.error("Erro ao carregar dados ou gerar imagem:", error);
@@ -25,65 +21,82 @@ const App: React.FC = () => {
   }, []);
 
   return (
-    <div className="flex flex-col p-[30px] pb-[50px] bg-[#A9A9A9]">
-      <p className="flex py-[40px] justify-center">Liturgia do Dia</p>
+    <div className="flex flex-col justify-center items-center w-full">
+      <p className="w-full py-6 bg-gray-400 text-center text-xl font-bold">
+        Liturgia do Dia
+      </p>
       {loading ? (
-        <p>Carregando...</p>
+        <p className="text-lg mt-4">Carregando...</p>
       ) : liturgia ? (
-        <div className="flex flex-col bg-[#87CEEB] justify-center items-center mx-auto">
-          <div className="flex flex-col justify-center items-center">
-            {/* Dados principais */}
-            <div className="flex flex-col justify-center p-[30px] w-[1000px]">
-              <p className="flex pb-[20px] justify-center">{liturgia.data}</p>
-              <p className="pb-[10px]">Liturgia: {liturgia.liturgia}</p>
-              <p className="pb-[10px]">Cor Litúrgica: {liturgia.cor}</p>
-              <p>Oração do Dia: {liturgia.dia}</p>
+        <div
+          className="flex flex-col justify-center items-center w-full px-4 md:px-8 lg:px-16 xl:px-24"
+          style={{
+            backgroundColor: liturgia.cor || "#FFE4E1", // Cor recebida da API ou valor padrão
+          }}
+        >
+          <div className="flex flex-col w-full max-w-4xl">
+            <div className="flex flex-col justify-center p-4">
+              <p className="text-center text-lg font-bold mb-4">
+                {liturgia.data}
+              </p>
+              <p className="text-base mb-2">Liturgia: {liturgia.liturgia}</p>
+              <p className="text-base mb-2">Cor Litúrgica: {liturgia.cor}</p>
+              <p className="text-base">Oração do Dia: {liturgia.dia}</p>
             </div>
 
             {/* Primeira Leitura */}
-            <div className="flex flex-col justify-center px-[300px] pt-[50px] w-[1000px]">
-              <p className="flex pb-[20px] justify-center">Primeira Leitura</p>
-              <p className="pb-[10px]">{liturgia.primeiraLeitura.referencia}</p>
-              <p className="pb-[10px]">{liturgia.primeiraLeitura.titulo}</p>
-              <p>{liturgia.primeiraLeitura.texto}</p>
+            <div className="flex flex-col justify-center pt-8">
+              <p className="text-center text-lg font-bold mb-4">
+                Primeira Leitura
+              </p>
+              <p className="text-base mb-2">
+                {liturgia.primeiraLeitura.referencia}
+              </p>
+              <p className="text-base mb-2">
+                {liturgia.primeiraLeitura.titulo}
+              </p>
+              <p className="text-base">{liturgia.primeiraLeitura.texto}</p>
             </div>
 
             {/* Segunda Leitura */}
-            <div className="flex flex-col justify-center px-[300px] pt-[50px] w-[1000px]">
+            <div className="flex flex-col justify-center pt-8">
+              <p className="text-center text-lg font-bold mb-4">
+                Segunda Leitura
+              </p>
               {typeof liturgia.segundaLeitura === "string" ? (
-                <p className="flex justify-center">
-                  Segunda Leitura: {liturgia.segundaLeitura}
+                <p className="text-center text-base">
+                  {liturgia.segundaLeitura}
                 </p>
               ) : (
                 <>
-                  <p className="flex justify-center">Segunda Leitura</p>
-                  <p>{liturgia.segundaLeitura.referencia}</p>
-                  <p>{liturgia.segundaLeitura.titulo}</p>
-                  <p>{liturgia.segundaLeitura.texto}</p>
+                  <p className="text-base">
+                    {liturgia.segundaLeitura.referencia}
+                  </p>
+                  <p className="text-base">{liturgia.segundaLeitura.titulo}</p>
+                  <p className="text-base">{liturgia.segundaLeitura.texto}</p>
                 </>
               )}
             </div>
 
             {/* Salmo */}
-            <div className="flex flex-col justify-center px-[300px] pt-[50px] w-[1000px]">
-              <p className="flex pb-[20px] justify-center">Salmo</p>
-              <p className="pb-[10px]">{liturgia.salmo.referencia}</p>
-              <p className="pb-[10px]">Refrão: {liturgia.salmo.refrao}</p>
-              <p>{liturgia.salmo.texto}</p>
+            <div className="flex flex-col justify-center pt-8">
+              <p className="text-center text-lg font-bold mb-4">Salmo</p>
+              <p className="text-base mb-2">{liturgia.salmo.referencia}</p>
+              <p className="text-base mb-2">Refrão: {liturgia.salmo.refrao}</p>
+              <p className="text-base">{liturgia.salmo.texto}</p>
             </div>
 
             {/* Evangelho */}
-            <div className="flex flex-col justify-center px-[300px] pt-[50px] w-[1000px] pb-[50px]">
-              <p className="flex pb-[20px] justify-center">Evangelho</p>
-              <p className="pb-[10px]">{liturgia.evangelho.referencia}</p>
-              <p className="pb-[10px]">{liturgia.evangelho.titulo}</p>
-              <p>{liturgia.evangelho.texto}</p>
+            <div className="flex flex-col justify-center pt-8 pb-8">
+              <p className="text-center text-lg font-bold mb-4">Evangelho</p>
+              <p className="text-base mb-2">{liturgia.evangelho.referencia}</p>
+              <p className="text-base mb-2">{liturgia.evangelho.titulo}</p>
+              <p className="text-base">{liturgia.evangelho.texto}</p>
             </div>
-
           </div>
         </div>
       ) : (
-        <p>Não foi possível carregar os dados.</p>
+        <p className="text-lg mt-4">Não foi possível carregar os dados.</p>
       )}
     </div>
   );
