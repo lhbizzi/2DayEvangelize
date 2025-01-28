@@ -14,6 +14,24 @@ This project was developed using **React**, **Vite**, and **Tailwind CSS**, and 
 You can access the live version of the project hosted on Vercel by clicking the link below:  
 [**2Day Evangelize**](https://2dayevangelize.vercel.app)
 
+## Development stages
+
+- First, API research was done to find out how to retrieve the data. The search was done with help of the Chat GPT.
+![Image](https://github.com/user-attachments/assets/50c02bcf-f93c-432b-aa56-b26ea0aecb99)
+
+- After, the Gospel API was tested, using postman, with the GET parameter. 
+![Image](https://github.com/user-attachments/assets/5b269f12-4a0d-403a-8e1e-c2c794e7d228)
+
+- Latest final result:
+![Image](https://github.com/user-attachments/assets/73331c45-d188-4032-acd0-71da60cb7760)
+![Image](https://github.com/user-attachments/assets/eb579358-7c9f-499f-9e71-ee64d50b9dbd)
+
+## Future Plans
+
+- Addition of an AI, which generates images, based on the text of the Gospel.
+- Addition of differents windows, with different content. For example, a canvas of the saint of the day.
+
+
 ## How to Run the Project
 
 1. Clone this repository to your local machine:
