@@ -46,7 +46,6 @@ const App: React.FC = () => {
               <p className="text-base">Oração do Dia: {liturgia.dia}</p>
             </div>
             <Divider />
-
             {/* Primeira Leitura */}
             <div className="flex flex-col justify-center py-8">
               <p className="text-center text-lg font-bold mb-4">
@@ -61,7 +60,6 @@ const App: React.FC = () => {
               <p className="text-base">{liturgia.primeiraLeitura.texto}</p>
             </div>
             <Divider />
-
             {/* Segunda Leitura */}
             <div className="flex flex-col justify-center py-8">
               <p className="text-center text-lg font-bold mb-4">
@@ -82,7 +80,6 @@ const App: React.FC = () => {
               )}
             </div>
             <Divider />
-
             {/* Salmo */}
             <div className="flex flex-col justify-center py-8">
               <p className="text-center text-lg font-bold mb-4">Salmo</p>
@@ -91,7 +88,6 @@ const App: React.FC = () => {
               <p className="text-base">{liturgia.salmo.texto}</p>
             </div>
             <Divider />
-
             {/* Evangelho */}
             <div className="flex flex-col justify-center py-8">
               <p className="text-center text-lg font-bold mb-4">Evangelho</p>
