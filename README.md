@@ -1,50 +1,40 @@
-# React + TypeScript + Vite
+# React Project - Integration with Liturgia API
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project was developed using **React**, **Vite**, and **Tailwind CSS**, and integrates with the [Liturgia API](https://liturgia.up.railway.app/), providing liturgical data such as celebrations and readings.
 
-Currently, two official plugins are available:
+## Technologies Used
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React**: For building the user interface.
+- **Vite**: For fast and efficient bundling and development server.
+- **Tailwind CSS**: For utility-first styling.
+- **Liturgia API**: Used to fetch liturgical data, including celebrations and readings.
 
-## Expanding the ESLint configuration
+## Live Demo
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+You can access the live version of the project hosted on Vercel by clicking the link below:  
+[**2Day Evangelize**](https://2dayevangelize.vercel.app)
 
-- Configure the top-level `parserOptions` property like this:
+## How to Run the Project
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+1. Clone this repository to your local machine:
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+   ```bash
+   git clone https://github.com/your-username/repository-name.git
+   ```
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+2. Navigate to the project folder:
+   cd 2DayEvangelize
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+3. Install the dependencies:
+   npm install
+
+4. Start the development server:
+   npm run dev
+
+## Contributing
+
+If you would like to contribute to the project, feel free to submit pull requests. You can also report issues or suggest improvements.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
