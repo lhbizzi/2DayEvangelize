@@ -23,7 +23,7 @@ const App: React.FC = () => {
   return (
     <div className="flex flex-col justify-center items-center w-full">
       <p className="w-full py-6 bg-gray-400 text-center text-xl font-bold">
-        Liturgia do Dia
+        Evangelho do Dia
       </p>
       {loading ? (
         <p className="text-lg mt-4">Carregando...</p>
@@ -31,7 +31,7 @@ const App: React.FC = () => {
         <div
           className="flex flex-col justify-center items-center w-full px-4 md:px-8 lg:px-16 xl:px-24"
           style={{
-            backgroundColor: liturgia.cor || "#FFE4E1", // Cor recebida da API ou valor padrão
+            backgroundColor: "#87CEEB", // Cor recebida da API ou valor padrão
           }}
         >
           <div className="flex flex-col w-full max-w-4xl">
