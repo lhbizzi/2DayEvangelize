@@ -38,7 +38,7 @@ You can access the live version of the project hosted on Vercel by clicking the 
 1. Clone this repository to your local machine:
 
    ```bash
-   git clone https://github.com/your-username/repository-name.git
+   git clone https://github.com/lhbizzi/2DayEvangelize.git
    ```
 
 2. Navigate to the project folder:
