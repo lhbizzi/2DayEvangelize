@@ -30,6 +30,7 @@ You can access the live version of the project hosted on Vercel by clicking the 
 
 - Addition of an AI, which generates images, based on the text of the Gospel.
 - Addition of differents windows, with different content. For example, a canvas of the saint of the day.
+- Make a background that change the color, based on the Liturgic Color of the day.
 
 
 ## How to Run the Project
