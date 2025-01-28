@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { fetchLiturgiaDiaria, Liturgia } from "./utils/api";
-import Divider from "./components/divider";
-import FormatarData from "./components/formatData";
 
 const App: React.FC = () => {
   const [liturgia, setLiturgia] = useState<Liturgia | null>(null);
@@ -22,6 +20,24 @@ const App: React.FC = () => {
     loadLiturgia();
   }, []);
 
+  const Divider = () => (
+    <div className="border-t-2 border-[#000] my-4 w-full"/>
+  );
+
+  const FormatarData = ({ dataString }: { dataString: string }) => {
+    // Divida a data no formato DD/MM/AAAA
+    const [dia, mes, ano] = dataString.split('/');
+  
+    // Lista de meses por extenso
+    const meses = [
+      'Janeiro', 'Fevereiro', 'Março', 'Abril',
+      'Maio', 'Junho', 'Julho', 'Agosto',
+      'Setembro', 'Outubro', 'Novembro', 'Dezembro'
+    ];
+  
+    return `${dia} de ${meses[parseInt(mes) - 1]} de ${ano}`;
+  }
+  
   return (
     <div className="flex flex-col justify-center items-center w-full">
       <p className="w-full py-6 bg-gray-400 text-center text-xl font-bold">
