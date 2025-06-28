@@ -21,23 +21,73 @@ const App: React.FC = () => {
   }, []);
 
   const Divider = () => (
-    <div className="border-t-2 border-[#000] my-4 w-full"/>
+    <div className="border-t-2 border-[#f2f2f2] my-4 w-full" />
   );
 
   const FormatarData = ({ dataString }: { dataString: string }) => {
     // Divida a data no formato DD/MM/AAAA
-    const [dia, mes, ano] = dataString.split('/');
-  
+    const [dia, mes, ano] = dataString.split("/");
+
     // Lista de meses por extenso
     const meses = [
-      'Janeiro', 'Fevereiro', 'Março', 'Abril',
-      'Maio', 'Junho', 'Julho', 'Agosto',
-      'Setembro', 'Outubro', 'Novembro', 'Dezembro'
+      "Janeiro",
+      "Fevereiro",
+      "Março",
+      "Abril",
+      "Maio",
+      "Junho",
+      "Julho",
+      "Agosto",
+      "Setembro",
+      "Outubro",
+      "Novembro",
+      "Dezembro",
     ];
-  
+
     return `${dia} de ${meses[parseInt(mes) - 1]} de ${ano}`;
+  };
+
+  const now = new Date();
+  const diaSemana = now.getDay();
+  let diaSemanaTexto;
+
+  switch (diaSemana) {
+    case 0:
+      diaSemanaTexto = "Domingo";
+      break;
+    case 1:
+      diaSemanaTexto = "Segunda-Feira";
+      break;
+    case 2:
+      diaSemanaTexto = "Terça-Feira";
+      break;
+    case 3:
+      diaSemanaTexto = "Quarta-Feira";
+      break;
+    case 4:
+      diaSemanaTexto = "Quinta-Feira";
+      break;
+    case 5:
+      diaSemanaTexto = "Sexta-Feira";
+      break;
+    case 6:
+      diaSemanaTexto = "Sábado";
+      break;
   }
-  
+
+  const bgLiturgia = ({ cor }: { cor: string }) => {
+    switch (cor) {
+      case "Verde":
+        return '#FFFAFA';
+      case "Branco":
+        return "#FFFAFA";
+      case "Rosa":
+        return "";
+      default:
+        return "gray-400";
+    }
+  };
+
   return (
     <div className="flex flex-col justify-center items-center w-full">
       <p className="w-full py-6 bg-gray-400 text-center text-xl font-bold">
@@ -46,19 +96,19 @@ const App: React.FC = () => {
       {loading ? (
         <p className="text-lg mt-4">Carregando...</p>
       ) : liturgia ? (
-        <div
-          className="flex flex-col justify-center items-center w-full px-4 md:px-8 lg:px-16 xl:px-24"
-          style={{
-            backgroundColor: "#87CEEB", // Cor recebida da API ou valor padrão
-          }}
-        >
+        <div className="flex flex-col justify-center items-center w-full px-4 md:px-8 lg:px-16 xl:px-24 font-[600]"
+        style={{ backgroundColor: bgLiturgia({ cor: liturgia.cor }) }}>
           <div className="flex flex-col w-full max-w-4xl">
             <div className="flex flex-col justify-center p-4 w-full">
               <p className="text-center text-lg font-bold mb-4">
                 {FormatarData({ dataString: liturgia.data })}
               </p>
-              <p className="text-base mb-2">Liturgia: {liturgia.liturgia}</p>
-              <p className="text-base mb-2">Cor Litúrgica: {liturgia.cor}</p>
+              <p className="flex justify-center text-base mb-2">
+                Cor Litúrgica: {liturgia.cor}
+              </p>
+              <p className="flex justify-center text-base mb-2">
+                {liturgia.liturgia} | {diaSemanaTexto}
+              </p>
               <p className="text-base">Oração do Dia: {liturgia.dia}</p>
             </div>
             <Divider />
